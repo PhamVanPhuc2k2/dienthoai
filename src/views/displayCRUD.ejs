@@ -12,32 +12,39 @@
     />
   </head>
   <body>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="userName">userName</th>
-          <th scope="email">email</th>
-          <th scope="fullName">fullName</th>
-          <th scope="phoneNumber">phoneNumber</th>
-          <th scope="address">address</th>
-          <th scope="gender">gender</th>
-          <th scope="roleId">roleId</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% for(let i = 0 ; i<dataTable.length;i++) { %>
-          <tr>
-            <td><%= dataTable[i].userName %></td>
-            <td><%= dataTable[i].email %></td>
-            <td><%= dataTable[i].password %></td>
-            <td><%= dataTable[i].fullName %></td>
-            <td><%= dataTable[i].phoneNumber %></td>
-            <td><%= dataTable[i].address %></td>
-            <td><%= dataTable[i].gender %></td>
-            <td><%= dataTable[i].roleId %></td>
-          </tr>
-        <% } %>
-      </tbody>
-    </table>
+    <div class="row">
+      <div class="col-6">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="email">email</th>
+              <th scope="fullName">fullName</th>
+              <th scope="phoneNumber">phoneNumber</th>
+              <th scope="address">address</th>
+              <th scope="gender">gender</th>
+              <th scope="roleId">roleId</th>
+              <th scope="actions">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(let i = 0 ; i<dataTable.length;i++) { %>
+            <tr>
+              <td><%= dataTable[i].email %></td>
+              <td><%= dataTable[i].fullName %></td>
+              <td><%= dataTable[i].phoneNumber %></td>
+              <td><%= dataTable[i].address %></td>
+              <td><%= dataTable[i].gender %></td>
+              <td><%= dataTable[i].roleId %></td>
+              <td class="d-flex">
+                <a href="/edit-crud?id=<%=dataTable[i].id%>"  class="mr-3 bg-success">Edit</a>
+                <a  class="bg-danger">Delete</a>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-6"></div>
+    </div>
   </body>
 </html>
