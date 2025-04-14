@@ -37,7 +37,7 @@
               <td><%= dataTable[i].roleId %></td>
               <td class="d-flex">
                 <a href="/edit-crud?id=<%=dataTable[i].id%>"  class="mr-3 bg-success">Edit</a>
-                <a  class="bg-danger">Delete</a>
+                <a href="/delete-crud?id=<%=dataTable[i].id%>"  class="bg-danger">Delete</a>
               </td>
             </tr>
             <% } %>
